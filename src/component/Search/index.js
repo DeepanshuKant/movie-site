@@ -19,7 +19,7 @@ function Index() {
                         <div className="Search">
                                 <div className="main__search">
                                         <input className="search__input" value={input} onChange={(e) => setInput(e.target.value)} type="search" placeholder="Enter any Movie, Series, Show name" />
-                                        <button className="search__button" onClick={working}><AiOutlineSearch /></button>
+                                        <button className="search__button" onKeyUp={working} onClick={working}><AiOutlineSearch /></button>
                                 </div>
                         </div>
 

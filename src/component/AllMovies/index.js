@@ -10,6 +10,7 @@ function Index() {
 
 
     const [dataNew, setDataNew] = useState([]);
+    // const [forID, setNewId] = useState([])
     useEffect(async () => {
         try {
             const url = `https://omdbapi.com/?s=${title}&page=1&apikey=4a3bcc72`;
@@ -18,7 +19,6 @@ function Index() {
             setDataNew(data.Search)
         } catch (error) {
             console.log(error.message)
-
         }
     }, [])
 
@@ -28,7 +28,7 @@ function Index() {
             <div className="main__movie__box">
                 <div className="movie__box">
                     {dataNew.map((movie) =>
-                        <div className="movie__item">
+                        <div key={movie.imdbID} className="movie__item" onClick={() => window.location.href = "/byid/" + movie.imdbID}>
                             <div className="movie__poster">
                                 <img src={movie.Poster} alt={movie.Title} />
                             </div>
