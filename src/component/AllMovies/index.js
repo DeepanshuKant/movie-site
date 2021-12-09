@@ -18,10 +18,11 @@ function Index() {
             setDataNew(data.Search)
         } catch (error) {
             console.log(error.message)
-            
+
         }
     }, [])
-    console.log(dataNew);
+
+    // console.log(dataNew);
     return (
         <>
             <div className="main__movie__box">
