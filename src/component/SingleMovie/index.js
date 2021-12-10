@@ -1,3 +1,4 @@
+import App from '../../App.css'
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router'
@@ -20,20 +21,23 @@ function Index() {
             console.log(error.message)
         }
     }, [])
-
-
     return (
         <>
-            <div className="main__movie__box">
-                <div className="movie__box">
+            <div className="single__main__movie__box">
+                <div className="single__movie__box">
                     {newMovie.map((movie) => {
                         return (
-                            <div key={movie.imdbID} className="movie__item">
-                                <div className="movie__poster">
-                                    <img src={movie.Poster} alt={movie.Title} />
+                            <div key={movie.imdbID} className="single__movie__item" >
+                                <div className="single__movie__poster">
+                                    <img className="single__movie__img" src={movie.Poster} alt={movie.Title} />
                                 </div>
-                                <div className="movie__title">
-                                    <h3>{movie.Title}</h3>
+                                <div className="single__movie__title">
+                                    <h3>{movie.Title} <span className="single__movie__rating">{movie.imdbRating}</span></h3>
+                                    <h5>Year: {movie.Year}  Released: {movie.Released}</h5>
+                                    <h5 className="single__movie__genre">Genre: {movie.Genre}</h5>
+                                    <h5>Writers: {movie.Writer}</h5>
+                                    <h5>Actors: {movie.Actors} </h5>
+                                    <h5>Language: {movie.Language} </h5>
                                 </div>
                             </div>
                         )
