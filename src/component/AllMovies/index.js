@@ -8,7 +8,6 @@ import { useParams } from 'react-router'
 function Index() {
     const { title } = useParams();
 
-
     const [dataNew, setDataNew] = useState([]);
     // const [forID, setNewId] = useState([])
     useEffect(async () => {
